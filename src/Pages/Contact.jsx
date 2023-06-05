@@ -1,9 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Footer from '../components/Footer';
 import MoveToTop from '../components/MoveToTop';
 // import Spinnner from '../components/Spinner';
 import Navbar from '../components/Navbar';
+import Swal from 'sweetalert2';
+
 const Contact = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+
+  const send = () => {
+    // setInterval(() => {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Message sent successfully'
+      })
+      localStorage.setItem("name", name)
+      localStorage.setItem("email", email)
+      localStorage.setItem("subject", subject)
+      localStorage.setItem("message", message)
+    // }, [1000]);
+  }
+
+
+
   return (
     <div>
 
@@ -49,10 +83,12 @@ const Contact = () => {
                     <div class="col-md-6">
                       <div class="form-floating">
                         <input
+                          // value={name}
                           type="text"
                           class="form-control"
                           id="name"
                           placeholder="Your Name"
+                          onChange={e => setName(e.target.value)}
                         />
                         <label for="name">Your Name</label>
                       </div>
@@ -60,10 +96,12 @@ const Contact = () => {
                     <div class="col-md-6">
                       <div class="form-floating">
                         <input
+                          // value={email}
                           type="email"
                           class="form-control"
                           id="email"
                           placeholder="Your Email"
+                          onChange={e => setEmail(e.target.value)}
                         />
                         <label for="email">Your Email</label>
                       </div>
@@ -71,10 +109,12 @@ const Contact = () => {
                     <div class="col-12">
                       <div class="form-floating">
                         <input
+                          // value={subject}
                           type="text"
                           class="form-control"
                           id="subject"
                           placeholder="Subject"
+                          onChange={e => setSubject(e.target.value)}
                         />
                         <label for="subject">Subject</label>
                       </div>
@@ -82,10 +122,12 @@ const Contact = () => {
                     <div class="col-12">
                       <div class="form-floating">
                         <textarea
+                          // value={message}
                           class="form-control"
                           placeholder="Leave a message here"
                           id="message"
                           style={{height: "100px"}}
+                          onChange={e => setMessage(e.target.value)}
                         />
                         <label for="message">Message</label>
                       </div>
@@ -93,7 +135,8 @@ const Contact = () => {
                     <div class="col-12">
                       <button
                         class="btn btn-primary rounded-pill py-3 px-5"
-                        type="submit"
+                        type="button"
+                        onClick={send}
                       >
                         Send Message
                       </button>

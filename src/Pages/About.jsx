@@ -4,14 +4,33 @@ import MoveToTop from '../components/MoveToTop';
 import Navbar from '../components/Navbar';
 // import Spinnner from '../components/Spinner';
 import PageHeader from '../components/PageHeader';
-
+import {Link} from 'react-router-dom';
 const About = () => {
   return (
     <div>
-        {/* <Spinnner /> */}
-        <Navbar />
+      {/* <Spinnner /> */}
+      <Navbar />
       {/* <!-- Page Header Start --> */}
-        <PageHeader />
+      <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+          <h1 class="display-3 text-white mb-3 animated slideInDown">
+            About Us
+          </h1>
+          <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a class="text-white" href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class="text-white" href="#">Pages</a>
+              </li>
+              <li class="breadcrumb-item text-white active" aria-current="page">
+                About
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
       {/* <!-- Page Header End --> */}
 
       {/* <!-- Feature Start --> */}
@@ -121,24 +140,24 @@ const About = () => {
                 <div class="d-flex">
                   <img class="img-fluid w-75" src="img/team-1.jpg" alt="" />
                   <div class="team-social w-25">
-                    <a
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://web.facebook.com/login.php/?_rdc=1&_rdr"
                     >
                       <i class="fab fa-facebook-f" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://twitter.com/explore"
                     >
                       <i class="fab fa-twitter" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://instagram.com"
                     >
                       <i class="fab fa-instagram" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div class="p-4">
@@ -152,24 +171,24 @@ const About = () => {
                 <div class="d-flex">
                   <img class="img-fluid w-75" src="img/team-2.jpg" alt="" />
                   <div class="team-social w-25">
-                    <a
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://web.facebook.com/login.php/?_rdc=1&_rdr"
                     >
                       <i class="fab fa-facebook-f" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://twitter.com/explore"
                     >
                       <i class="fab fa-twitter" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       class="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                      href
+                      to="https://instagram.com"
                     >
                       <i class="fab fa-instagram" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div class="p-4">

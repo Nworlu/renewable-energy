@@ -5,6 +5,39 @@
   --dark: #1A2A36;
 }
 
+#subtotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+  margin-left: 47%;
+}
+
+ #subtotal h3 {
+  padding-bottom: 15px;
+}
+
+#subtotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subtotal table td {
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+ #subtotal button {
+  background-color: #090b06;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-top: 3%;
+  border: none;
+}
+
 .fw-medium {
   font-weight: 500 !important;
 }
